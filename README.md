@@ -1,6 +1,16 @@
 
 # Api Adoorei
 
+Este projeto tem como objetivo fornecer uma api para interagir com produtos e venda para o teste de desenvolvedor back-end da empresa Adoorei.
+
+Sobre a arquitetura:
+
+    Criei um classe BaseModel que possui implementação de regras em comum a todos os outros models como por exemplo: validação.
+    Ela disponibiliza métodos como beforeSave e afterSave para quem implementá-la.
+    Criei uma camada Service para centralizar a regra de neǵócio da aplicação.
+    Também criei um controle de transação ao criar a venda, se acontecer algum problema ao salvar o produto, a venda é desefeita.
+
+
 ### Documentação para postman
 
 https://documenter.getpostman.com/view/14197155/2sA2xb6vSF#0130e239-7abb-4386-b18a-66556ba7a3de
@@ -49,7 +59,3 @@ Gerar a key do projeto Laravel
 ```sh
 php artisan key:generate
 ```
-
-
-Acessar o projeto
-[http://localhost:8989](http://localhost:8989)
