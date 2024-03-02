@@ -31,7 +31,7 @@ APP_URL=http://localhost:8989
 DB_CONNECTION=mysql
 DB_HOST=db
 DB_PORT=3306
-DB_DATABASE=laravel
+DB_DATABASE=adoorei
 DB_USERNAME=root
 DB_PASSWORD=root
 ```
@@ -58,4 +58,19 @@ composer install
 Gerar a key do projeto Laravel
 ```sh
 php artisan key:generate
+```
+
+Gerar a key do projeto Laravel
+```sh
+php artisan key:generate
+```
+
+Executar migrations
+```sh
+php artisan migrate
+```
+
+Executar seed
+```sh
+php artisan db:seed
 ```
