@@ -1,27 +1,11 @@
 
-# Setup Docker Para Projetos Laravel (8, 9 ou 10)
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
+# Api Adoorei
 
-### Passo a passo
-Clone Repositório
-```sh
-git clone https://github.com/especializati/setup-docker-laravel.git
-```
+### Documentação para postman
 
-Clone os Arquivos do Laravel
-```sh
-git clone https://github.com/laravel/laravel.git app-laravel
-```
+https://documenter.getpostman.com/view/14197155/2sA2xb6vSF#0130e239-7abb-4386-b18a-66556ba7a3de
 
-
-Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
-```sh
-cp -rf setup-docker-laravel/* app-laravel/
-```
-```sh
-cd app-laravel/
-```
-
+### Passo a passo para rodar a Api
 
 Crie o Arquivo .env
 ```sh
@@ -31,7 +15,7 @@ cp .env.example .env
 
 Atualize as variáveis de ambiente do arquivo .env
 ```dosini
-APP_NAME="Especializa Ti"
+APP_NAME="Api"
 APP_URL=http://localhost:8989
 
 DB_CONNECTION=mysql
@@ -40,14 +24,6 @@ DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=root
-
-CACHE_DRIVER=redis
-QUEUE_CONNECTION=redis
-SESSION_DRIVER=redis
-
-REDIS_HOST=redis
-REDIS_PASSWORD=null
-REDIS_PORT=6379
 ```
 
 
