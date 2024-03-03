@@ -7,7 +7,7 @@ Sobre a arquitetura:
 
 Criei uma classe BaseModel que possui implementação de regras em comum a todos os outros models como por exemplo: validação.
 Ela disponibiliza métodos como beforeSave e afterSave para quem implementá-la.
-Criei uma camada Service para centralizar a regra de neǵócio da aplicação.
+Criei uma camada Service para centralizar a regra de negócio da aplicação.
 Também criei um controle de transação ao criar a venda, se acontecer algum problema ao salvar o produto, a venda é desefeita.
 
 
