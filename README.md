@@ -74,3 +74,8 @@ Executar seed
 ```sh
 php artisan db:seed
 ```
+
+Executar testes unitários
+```sh
+php artisan test
+```
