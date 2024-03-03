@@ -23,6 +23,7 @@ class ProductFactory extends Factory
             'name' => "Celular {$index}",
             'price' => fake()->randomFloat(2, 100, 1000),
             'description' => fake()->sentence,
+            'stock_qtd' => 5
         ];
     }
 }
