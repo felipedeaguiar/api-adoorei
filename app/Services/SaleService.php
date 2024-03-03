@@ -82,7 +82,7 @@ class SaleService
      * @param Sale $sale
      * @return mixed
      */
-    public function getTotalPrice(Sale $sale)
+    private function getTotalPrice(Sale $sale)
     {
         $totalAmount = $sale->products->sum(function ($product) {
             return $product->price * $product->pivot->amount;
@@ -112,7 +112,7 @@ class SaleService
     /**
      * @return Sale
      */
-    private function createSale():Sale
+    public function createSale():Sale
     {
         $sale = new Sale();
         $sale->save();
