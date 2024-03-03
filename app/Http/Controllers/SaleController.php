@@ -99,6 +99,8 @@ class SaleController extends Controller
 
         } catch (ModelNotFoundException $e) {
             return $this->toError('Unknow sale', 404);
+        } catch (\Exception $exception) {
+            return $this->toError($exception->getMessage(), 400);
         }
     }
 }

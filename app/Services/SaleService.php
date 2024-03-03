@@ -12,6 +12,19 @@ class SaleService
 {
 
     /**
+     * @var ProductService
+     */
+    protected $productService;
+
+    /**
+     * @param ProductService $productService
+     */
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
+    }
+
+    /**
      * @param array $products
      * @return Sale
      * @throws \Exception
@@ -57,6 +70,11 @@ class SaleService
     public function cancel(string $uuid): bool
     {
         $sale = Sale::where('uuid', $uuid)->firstOrFail();
+
+        //vai refazer o estoque
+        foreach ($sale->products as $product) {
+            $this->productService->incrementStockQtd($product, $product->pivot->amount);
+        }
 
         return $sale->delete();
     }
@@ -138,6 +156,9 @@ class SaleService
 
         foreach ($products as $productData) {
             $product = Product::findOrFail($productData['id']);
+
+            $this->productService->decrementStockQtd($product, $productData['amount']);
+
             $amount = $productData['amount'];
             $productsData[$product->id] = ['amount' => $amount];
         }

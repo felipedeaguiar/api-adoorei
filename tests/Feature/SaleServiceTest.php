@@ -3,8 +3,6 @@
 namespace Tests\Feature;
 
 use App\Models\Product;
-use App\Models\Sale;
-use App\Services\SaleService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
