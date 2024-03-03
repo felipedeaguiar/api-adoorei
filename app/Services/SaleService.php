@@ -65,12 +65,16 @@ class SaleService
      * @param string $uuid
      * @return Sale
      */
-    public function getByUuid(string $uuid, $withRelations = false): Sale
+    public function getByUuid(string $uuid, $withRelations = false, $withTrashed = false): Sale
     {
         $query = Sale::where('uuid', $uuid);
 
         if ($withRelations) {
             $query->with('products');
+        }
+
+        if ($withTrashed) {
+            $query->withTrashed();
         }
 
         $sale = $query->firstOrFail();

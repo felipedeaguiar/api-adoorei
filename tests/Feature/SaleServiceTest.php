@@ -87,4 +87,23 @@ class SaleServiceTest extends TestCase
         $product = Product::find(1);
         $this->assertEquals($sale->amount, $product->price);
     }
+
+    public function test_cancel_sale()
+    {
+        $products = [
+            [
+                'id' => 1,
+                'amount' => 1
+            ]
+        ];
+
+        $saleService = app(\App\Services\SaleService::class);
+
+        $sale = $saleService->create($products);
+        $this->assertNotEmpty($sale);
+
+        $this->assertTrue($saleService->cancel($sale->uuid));
+
+        $this->assertNotEmpty($saleService->getByUuid($sale->uuid, false, true)->deleted_at);
+    }
 }
